@@ -47,8 +47,12 @@ app.get('/oauth2callback', function(req, res) {
     res.send(req.query.code);
 });
 
+app.get('/', function(req, res) {
+    res.render('login');
+});
+
 app.get('/home', function(req, res) {
-    res.render('index');
+    res.render('liveview');
 });
 
 app.get('/login', function(req, res) {

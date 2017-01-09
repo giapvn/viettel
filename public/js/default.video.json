@@ -1,0 +1,11 @@
+{
+	"brightness": 50,
+	"contrast": 50,
+	"saturation": 50,
+	"sharpness": 50,
+	"stream": "continuous",
+	"encode": "h264",
+	"resolution": "fullhd",
+	"fps": 24,
+	"bitrate": 1024
+}

@@ -29,10 +29,8 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">              
-              <li><a href="#">Live</a></li>
+              <li><a href="/liveview">Live</a></li>
               <li><a href="/setup/video">Setup</a></li>
-              <li><a href="#">Alarm</a></li>
-              <li><a href="#">Camera Discovery</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advance Features<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -45,7 +43,7 @@
             </ul>
            
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Logout</a></li>
+              <li><a href="/login">Logout</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
@@ -65,10 +63,10 @@
     		<ul class="dropdown-menu">
     			<li><a href="/setup/lan">LAN</a></li>
     			<li><a href="/setup/connection">Connection</a></li>
-      			<li><a href="/setup/wireless">Wireless</a></li>
+      		<li><a href="#">Wireless</a></li>
     		</ul>
 		</div>
-		<button type="button" class="btn btn-default"><a href="/setup/others">Others</a></button>
+		<button type="button" class="btn btn-default"><a href="#">Others</a></button>
 	</div>
 	<!-- end Setup Options -->
 
@@ -84,21 +82,22 @@
       	<div class="col-sm-3">
       		<ul class="list-group" style="margin-top: 50px; margin-left: 20px;">
 				<li class="list-group-item">Brightness
-					<input type="range" value="50" min="0" max="100" step="5"/>
+					<input id="brightness" type="range" value="50" min="0" max="100" step="5"/>
+          <p id="demo"></p>
 				</li>
 				<li class="list-group-item">Contrast
-					<input type="range" value="50" min="0" max="100" step="5"/>
+					<input id="contrast" type="range" value="50" min="0" max="100" step="5"/>
 				</li>
 				<li class="list-group-item">Saturation
-					<input type="range" value="50" min="0" max="100" step="5"/>
+					<input id="saturation" type="range" value="50" min="0" max="100" step="5"/>
 				</li>
 				<li class="list-group-item">Sharpness
-					<input type="range" value="50" min="0" max="100" step="5"/>
+					<input id="sharpness" type="range" value="50" min="0" max="100" step="5"/>
 				</li>
-				<li class="list-group-item">Code-stream<%for(var i=0; i<5; i++){%>&nbsp<%}%>
+				<li class="list-group-item" id="stream">Code-stream<%for(var i=0; i<5; i++){%>&nbsp<%}%>
 					<select>
-						<option value="continuous" selected="">Continuous</option>
-						<option value="motion">Motion</option>
+						<option value="continuous" >Continuous</option>
+						<option value="motion" selected="">Motion</option>
 					</select>
 				</li>
 				<li class="list-group-item">Encode-mode<%for(var i=0; i<3; i++){%>&nbsp<%}%>
@@ -128,8 +127,8 @@
 
 			<div class="row">
         		<div class="btn-group" role="group">
-            		<button type="button" class="btn btn-default" id="capture">Default</button>
-            		<button type="button" class="btn btn-default" id="multi-capture">Save</button>
+            		<button type="button" class="btn btn-default" id="default">Default</button>
+            		<button type="button" class="btn btn-default" id="save">Save</button>
         		</div>
         	</div>
       	</div>
@@ -142,8 +141,10 @@
   </div>
 
   <!-- javascript files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/js/setup-video.js"></script>
 
 </body>
 </html>
