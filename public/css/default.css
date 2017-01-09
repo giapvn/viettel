@@ -1,0 +1,15 @@
+#header .navbar{
+    height: 71px;
+}
+.navbar-nav>li>a{
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+#body input{
+    margin-right: 20px;
+}
+
+.hidden{
+	display: none;
+}

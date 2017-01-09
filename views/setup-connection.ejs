@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring Camera</title>
+  <!-- css file -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/default.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/setup-lan.css">
+
+</head>
+<body>
+  <div id="header">
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>                        
+            <a class="navbar-brand" href="#">
+              <img src="/images/branch.png" alt="" width="70" height="50">
+            </a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">              
+              <li><a href="#">Live</a></li>
+              <li><a href="/setup/video">Setup</a></li>
+              <li><a href="#">Alarm</a></li>
+              <li><a href="#">Camera Discovery</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advance Features<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+           
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </nav>    
+  </div>
+  
+  <div id="content">
+  <!-- Setup Options  -->
+    <div class="btn-group col-sm-8 col-sm-offset-4" role="group" aria-label="...">
+      <button type="button" class="btn btn-default"><a href="/setup/video">Video</a></button>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#">
+            Network</a>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/setup/lan">LAN</a></li>
+            <li><a href="/setup/connection">Connection</a></li>
+              <li><a href="/setup/wireless">Wireless</a></li>
+          </ul>
+      </div>
+      <button type="button" class="btn btn-default"><a href="/setup/others">Others</a></button>
+    </div>
+<!-- end Setup Options -->
+    
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#"><strong>Connection</strong></a></li>
+    </ul>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-5">
+        <!-- Optional Table -->
+        <ul class="list-group" style="position: relative;  top: 50px;">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-4">Max Connection</div>
+              <div class="col-sm-8">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="10">&nbsp(1~20)
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-4">TCP Port</div>
+              <div class="col-sm-8">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="35000">&nbsp(1025~65534)
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-4">UDP Port</div>
+              <div class="col-sm-8">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="35000">&nbsp(1025~65534)
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-4">HTTP Port</div>
+              <div class="col-sm-8">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="80">
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-4">RTSP Port</div>
+              <div class="col-sm-8">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="554">
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <input type="checkbox" name=""> HTTPs
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-4">HTTPs Port</div>
+              <div class="col-sm-8">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="443">
+              </div>
+            </div>
+          </li>        
+        </ul>
+        <!-- end Optional Table -->s
+      </div>
+    </div>
+
+    <!-- Button Table -->
+    <div class="row" style="margin-top: 40px;">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-5">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default" id="default" style="width: 85px;">Default</button>
+          <button type="button" class="btn btn-default" id="refresh" style="width: 85px;">Refresh</button>
+          <button type="button" class="btn btn-default" id="save" style="width: 85px;">Save</button>
+        </div>        
+      </div>      
+    </div>
+    <!-- end Button Table -->
+  <div id="footer">
+    
+  </div>
+
+  <!-- javascript files -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+</body>
+</html>
+
+
