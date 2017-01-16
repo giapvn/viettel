@@ -6,11 +6,32 @@ $(document).ready(function() {
     var $right = $("#right");
     var $auto = $("#auto");
 
-    var $brightness = document.getElementById('brightness');
-    var $contrast = document.getElementById("contrast");
-    var $saturation = document.getElementById('saturation');
-    var $sharpness = document.getElementById('sharpness');
+    var $brightness = this.getElementById('brightness');
+    var $contrast = this.getElementById("contrast");
+    var $saturation = this.getElementById('saturation');
+    var $sharpness = this.getElementById('sharpness');
 
+    // init();
+
+    // setup default for live when start incoming setup
+    // var init = function() {
+        $.ajax({
+            url: "http://localhost:3333/setup-video",
+            type: "get",
+            timeout: 2000,
+            dataType: "json",
+            success: function(data){
+                $brightness.value = data.brightness;
+                $contrast.value = data.contrast;
+                $saturation.value = data.saturation;
+                $sharpness.value = data.sharpness;
+
+                // setup for video in html
+            }
+        });
+    // };
+
+    // send controlsignal
     $up.on('click', function() {
         $.post("api/control/", {
                 ptz: 1
@@ -56,44 +77,45 @@ $(document).ready(function() {
             });
     });
 
-    $("#brightness").on('change', function(){
-    	var brightness=$brightness.value;
-    	$.post("api/setup/video",{
-    		brightness: brightness
-    	},
-    	function(data, status){
-    		console.log(status);
-    	});
+    // send live setting
+    $("#brightness").on('change', function() {
+        var brightness = $brightness.value;
+        $.post("api/setup/live", {
+                brightness: brightness
+            },
+            function(data, status) {
+                console.log(status);
+            });
     });
 
-    $("#contrast").on('change', function(){
-    	var contrast=$contrast.value;
-    	$.post("api/setup/video",{
-    		contrast: contrast
-    	},
-    	function(data, status){
-    		console.log(status);
-    	});
+    $("#contrast").on('change', function() {
+        var contrast = $contrast.value;
+        $.post("api/setup/live", {
+                contrast: contrast
+            },
+            function(data, status) {
+                console.log(status);
+            });
     });
 
-    $("#saturation").on('change', function(){
-    	var saturation=$saturation.value;
-    	$.post("api/setup/video",{
-    		saturation: saturation
-    	},
-    	function(data, status){
-    		console.log(status);
-    	});
+    $("#saturation").on('change', function() {
+        var saturation = $saturation.value;
+        $.post("api/setup/live", {
+                saturation: saturation
+            },
+            function(data, status) {
+                console.log(status);
+            });
     });
 
-    $("#sharpness").on('change', function(){
-    	var sharpness=$sharpness.value;
-    	$.post("api/setup/video",{
-    		sharpness: sharpness
-    	},
-    	function(data, status){
-    		console.log(status);
-    	});
+    $("#sharpness").on('change', function() {
+        var sharpness = $sharpness.value;
+        $.post("api/setup/live", {
+                sharpness: sharpness
+            },
+            function(data, status) {
+                console.log(status);
+            });
     });
 
 });

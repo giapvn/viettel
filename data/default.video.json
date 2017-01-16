@@ -3,9 +3,9 @@
 	"contrast": 50,
 	"saturation": 50,
 	"sharpness": 50,
-	"stream": "continuous",
-	"encode": "h264",
-	"resolution": "fullhd",
+	"stream": "Continuous",
+	"encode": "H264",
+	"resolution": "1920x1080",
 	"fps": 24,
 	"bitrate": 1024
 }

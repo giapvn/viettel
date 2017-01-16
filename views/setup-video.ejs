@@ -94,14 +94,14 @@
 				<li class="list-group-item">Sharpness
 					<input id="sharpness" type="range" value="50" min="0" max="100" step="5"/>
 				</li>
-				<li class="list-group-item" id="stream">Code-stream<%for(var i=0; i<5; i++){%>&nbsp<%}%>
-					<select>
-						<option value="continuous" >Continuous</option>
-						<option value="motion" selected="">Motion</option>
+				<li class="list-group-item">Code-stream<%for(var i=0; i<5; i++){%>&nbsp<%}%>
+					<select id="stream">
+						<option value="continuous" selected="">Continuous</option>
+						<option value="motion">Motion</option>
 					</select>
 				</li>
 				<li class="list-group-item">Encode-mode<%for(var i=0; i<3; i++){%>&nbsp<%}%>
-					<select>
+					<select id="encode"> 
 						<option value="h264h">H264-H</option>
 						<option value="h264" selected="">H264</option>
 						<option value="h264b">H264-B</option>
@@ -109,7 +109,7 @@
 					</select>
 				</li>
 				<li class="list-group-item">Resolution<%for(var i=0; i<9; i++){%>&nbsp<%}%>
-					<select>
+					<select id="resolution">
 						<option value="fullhd" selected="">1920x1080</option>
 						<option value="">1280x1024</option>
 						<option value="13m">1280x960</option>
@@ -118,10 +118,10 @@
 					</select>
 				</li>
 				<li class="list-group-item">FPS
-					<input type="number" value="24" min="1" max="25" step="1"/>
+					<input id="fps" type="number" value="24" min="1" max="25" step="1"/>
 				</li>
 				<li class="list-group-item">Bitrate
-					<input type="number" value="1024" min="256" max="6144" step="256"/>
+					<input id="bitrate" type="number" value="1024" min="256" max="6144" step="256"/>
 				</li>
 			</ul>
 
